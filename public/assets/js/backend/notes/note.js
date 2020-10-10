@@ -99,7 +99,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         var tpl = '<span class="label label-info">' + j + '</span>';
                         result.push(tpl);
                     });
-                    return result.join(',');
+                    return result.join(' ');
                 }
             },
             bindevent: function () {

@@ -63,6 +63,17 @@
     color: #666;
     word-wrap: break-word;
 }
+.layer-notes-note .notes-note-tags {
+    display: block;
+    height: auto;
+    width: 300px;
+    padding: 10px 20px 5px 20px;
+    width: 300px;
+}
+.layer-notes-note .notes-note-tags .label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
 
 .layui-anim {
     -webkit-animation-duration: .3s;

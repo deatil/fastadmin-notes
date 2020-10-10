@@ -43,13 +43,15 @@ class Fast extends Backend
             ->where('status', '=', 1)
             ->count();
 
+        $config = get_addon_config('notes');
+        $limit = $config['new_notes_num'] ?: 15;
         $list = $this->model
             ->with(['admin'])
             ->where('admin_id', '=', $this->auth->id)
             ->where('status', '=', 1)
-            ->order('edit_time', 'DESC')
             ->order('is_top', 'DESC')
-            ->limit(0, 15)
+            ->order('edit_time', 'DESC')
+            ->limit(0, $limit)
             ->select();
 
         $list = collection($list)->toArray();

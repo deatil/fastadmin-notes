@@ -57,8 +57,9 @@ class Note extends Backend
             $list = $this->model
                 ->with(['admin'])
                 ->where($where)
-                ->order($sort, $order)
                 ->order('is_top', 'DESC')
+                ->order('edit_time', 'DESC')
+                ->order($sort, $order)
                 ->limit($offset, $limit)
                 ->select();
 

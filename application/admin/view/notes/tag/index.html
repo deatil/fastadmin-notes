@@ -1,7 +1,11 @@
 <div class="panel panel-default panel-intro">
     
     <div class="panel-heading">
-        {:build_heading(null,FALSE)}
+        <div class="panel-lead">
+            <em>标签管理</em>
+            所有笔记标签的管理与查询
+        </div>
+        
         <ul class="nav nav-tabs" data-field="status">
             <li class="active"><a href="#t-all" data-value="" data-toggle="tab">{:__('All')}</a></li>
             {foreach name="statusList" item="vo"}

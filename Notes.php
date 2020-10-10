@@ -2,6 +2,7 @@
 
 namespace addons\notes;
 
+use think\Lang;
 use think\Addons;
 
 use app\common\library\Menu;
@@ -56,7 +57,7 @@ class Notes extends Addons
                         ],
                         [
                             "name"    => "notes/tag",
-                            "title"   => "笔记标签",
+                            "title"   => "标签管理",
                             "icon"    => "fa fa-tags",
                             "ismenu"  => 1,
                             "sublist" => [
@@ -136,6 +137,16 @@ class Notes extends Addons
     {
         Menu::disable('notes');
         return true;
+    }
+
+    /**
+     * 应用初始化
+     * @return void
+     */
+    public function moduleInit()
+    {
+        $langFile = __DIR__ . DS . 'lang' . DS . request()->langset() . EXT;
+        Lang::load($langFile);
     }
 
 }
