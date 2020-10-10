@@ -191,15 +191,18 @@ if (Config.controllername == 'index' && Config.actionname == 'index') {
             };
             
             $(data).each(function(index, edata) {
-                var content = edata.content;
+                var edit_time = formatter.datetime(edata.edit_time);
                 if (edata.is_top == 1) {
-                    content = '<span class="text-danger" title="'+__('Note top')+'"><i class="fa fa-arrow-circle-up"></i></span> ' + content;
+                    edit_time = '<span class="text-danger" title="'+__('Note top')+'"><i class="fa fa-arrow-circle-up"></i></span> ' 
+                        + edit_time;
                 }
+                
+                var content = edata.content;
                 
                 html += '<li class="notes-fast-note-item js-notes-fast-note-item notes-fast-note-item-' + edata.id + '" data-id="' + edata.id + '">'
                     + '<div class="notes-fast-note-item-date">'
                         + '<span class="notes-fast-note-item-time">'
-                        + formatter.datetime(edata.edit_time)
+                        + edit_time
                         + '</span>'
                         + '<a href="javascript:;" class="notes-fast-note-item-remove js-notes-fast-note-item-remove" data-id="'+edata.id+'" title="'+__('Notes remove note')+'">'
                             + '<i class="fa fa-trash"></i>'
