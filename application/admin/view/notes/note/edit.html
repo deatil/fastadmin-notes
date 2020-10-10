@@ -1,0 +1,34 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    {:token()}
+    <div class="form-group">
+        <label for="username" class="control-label col-xs-12 col-sm-2">{:__('Note Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[content]" class="form-control" cols="30" rows="5" data-rule="required">{$row.content}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('Note Tags')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="n-tags" name="row[tags]" value="{$row.tags}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Note top')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[is_top]', ['1'=>__('Set to top'), '0'=>__('Set to notop')], $row['is_top'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['1'=>__('Normal'), '0'=>__('Hidden')], $row['status'])}
+        </div>
+    </div>
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
