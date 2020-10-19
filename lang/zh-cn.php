@@ -4,6 +4,7 @@ return [
     'Notes Note' => '笔记',
     'Notes Add Note' => '添加笔记',
     'Notes Note List' => '笔记列表',
+    'Notes detail' => '笔记详情',
     'Note has tags' => '标签集',
     'Note top' => '置顶',
     'Fast note success' => '获取成功',
